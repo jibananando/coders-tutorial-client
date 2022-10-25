@@ -33,10 +33,7 @@ const Header = () => {
                     <Nav>
                         <Link className='text-decoration-none m-4' to="signup">Sign Up</Link>
                         <Link className='text-decoration-none m-4' to="login">Login</Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
-                        <span>{user?.email}</span>
+                        <span className='text-white m-4'>{user?.email}</span>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
