@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
+import SocialSignUp from './SocialSignUp';
 
 const SignUp = () => {
     const [error, setError] = useState(null);
@@ -64,6 +65,7 @@ const SignUp = () => {
                     Sign Up
                 </Button>
             </Form>
+            <SocialSignUp></SocialSignUp>
             <p>Already have an account? <Link to='/login' >Login</Link> </p>
             <p className='text-danger'>{error}</p>
         </div>
