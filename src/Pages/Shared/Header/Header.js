@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
+import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/UserContext';
 
@@ -31,6 +33,10 @@ const Header = () => {
                         }
                     </Nav>
                     <Nav>
+                        {user?.photoURL ?
+                            <Image className='m-4' style={{ height: '40px' }} roundedCircle src={user.photoURL}></Image>
+                            : <FaUser></FaUser>
+                        }
                         <span className='text-white m-4'>{user?.email}</span>
                     </Nav>
                 </Navbar.Collapse>

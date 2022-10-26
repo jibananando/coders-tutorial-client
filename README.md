@@ -77,5 +77,6 @@ features and functionality:
     1. used firebase
     2. installed react and react route dom
     3. installed react bootstrap and bootstrap
-    4. 
+    4. used react icon
+    5.
 
