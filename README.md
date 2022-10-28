@@ -78,5 +78,7 @@ features and functionality:
     2. installed react and react route dom
     3. installed react bootstrap and bootstrap
     4. used react icon
-    5.
+    5. used fake data, useLoader, useeffect
+    6. installed cors
+    
 
