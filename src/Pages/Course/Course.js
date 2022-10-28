@@ -7,12 +7,12 @@ const Course = () => {
     const course = useLoaderData();
     // console.log(course);
     return (
-        <Row xs={12} lg={3} className='gx-3'>
+        <Row xs={12} lg={3} className='g-4'>
 
             {
 
-                course.map(c => <Col key={c.id}> <Card className='h-200 w-100' style={{ width: '18rem' }}>
-                    <Card.Img variant="" src={c.img} />
+                course.map(c => <Col key={c.id}> <Card>
+                    <Card.Img height={280} variant="" src={c.img} />
                     <Card.Body>
                         <Card.Title>{c.name}</Card.Title>
 
