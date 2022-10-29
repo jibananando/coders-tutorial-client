@@ -9,7 +9,7 @@ import SocialSignUp from './SocialSignUp';
 
 const SignUp = () => {
     const [error, setError] = useState(null);
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -19,6 +19,7 @@ const SignUp = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
         const confirm = form.confirm.value;
@@ -37,12 +38,24 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                handleUpdateUserProfile(name, photoURL)
                 form.reset();
                 navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error);
             })
+    }
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error));
     }
 
     return (
@@ -52,6 +65,10 @@ const SignUp = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Full Name</Form.Label>
                     <Form.Control type="text" name="name" placeholder="Enter Your name" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Photo Url</Form.Label>
+                    <Form.Control type="text" name="photoURL" placeholder="Enter Photo URL" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>

@@ -24,7 +24,6 @@ const Course = () => {
                     </ListGroup>
                     <Card.Body>
                         <Link to={`/courses/${c.id}`}>See detail</Link>
-
                     </Card.Body>
                 </Card>
                 </Col>

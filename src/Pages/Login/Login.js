@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
+import SocialSignUp from '../SignUp/SocialSignUp';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -47,6 +48,7 @@ const Login = () => {
                     Login
                 </Button>
             </Form>
+            <SocialSignUp></SocialSignUp>
             <p>Don't have an account? <Link to='/signup'>Sign up</Link> </p>
         </div>
 

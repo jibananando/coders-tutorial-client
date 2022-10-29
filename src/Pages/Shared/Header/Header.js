@@ -34,11 +34,12 @@ const Header = () => {
                         }
                     </Nav>
                     <Nav>
-                        {user?.photoURL ?
-                            <Image className='m-4' style={{ height: '40px' }} roundedCircle src={user.photoURL}></Image>
-                            : <FaUser></FaUser>
-                        }
-                        <span className='text-white m-4'>{user?.email}</span>
+                        <div data-bs-toggle="tooltip" data-bs-placement="bottom" title={user?.displayName}>
+                            {user?.photoURL ?
+                                <Image className='m-4' style={{ height: '40px' }} roundedCircle src={user?.photoURL}></Image>
+                                : <FaUser></FaUser>
+                            }
+                        </div>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
