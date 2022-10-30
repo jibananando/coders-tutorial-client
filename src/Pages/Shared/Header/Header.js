@@ -16,7 +16,7 @@ const Header = () => {
         <Navbar collapseOnSelect className='mb-4' expand="lg" bg={isLight ? 'light' : 'dark'} variant="dark">
             <Container>
                 <img className='m-2' style={{ height: '40px' }} src="https://thecodersguild.org.uk/images/logo/TCG-logo.svg" alt="" />
-                <Navbar.Brand><Link to='/' className='text-decoration-none fs-3 text-primary'>Coders Tutorial</Link> </Navbar.Brand>
+                <Navbar.Brand><Link to='/' className='text-decoration-none fs-3 text-info'>Coders Tutorial</Link> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
